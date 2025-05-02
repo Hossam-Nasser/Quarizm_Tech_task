@@ -1,7 +1,7 @@
 # Specialist Reservation App - Quarizm Tech Task
 
 ## About the Developer
-A brief introduction about myself: My name is Hosam, and I'm a mobile developer with two and a half years of experience. I've developed around nine applications for both Android and iOS using Flutter. Currently, I'm working at a company called HNE Features.
+A brief introduction about myself: My name is Hossam, and I'm a mobile developer with two and a half years of experience. I've developed around eleven applications for both Android and iOS using Flutter. Currently, I'm working at a company called HNE Features.
 
 ## Project Overview
 A comprehensive Flutter application that allows users to browse specialists (doctors, consultants, trainers) and book appointments with them. Built with clean architecture, Cubit state management, and dependency injection using injectable.
@@ -28,7 +28,7 @@ A comprehensive Flutter application that allows users to browse specialists (doc
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/specialist-reservation-app.git
+git clone https://github.com/Hossam-Nasser/Quarizm_Tech_task.git
 cd specialist-reservation-app
 ```
 
@@ -182,7 +182,7 @@ The application uses the following packages:
 
 ## Video Walkthrough
 
-A video walkthrough of the application is available at: [Insert link to video walkthrough here]
+A video walkthrough of the application is available at: https://drive.google.com/file/d/1AqH8jh9vqH-TMscFpr_kQa-Mt07gdAgV/view?usp=sharing
 
 ## Future Improvements
 

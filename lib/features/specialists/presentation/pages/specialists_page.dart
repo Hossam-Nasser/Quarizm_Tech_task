@@ -63,6 +63,10 @@ class _SpecialistsPageState extends State<SpecialistsPage> {
 
   void _logout() {
     context.read<AuthCubit>().logout();
+    context.pushNamedAndRemoveUntil(
+      Routes.login,
+      predicate: (Route<dynamic> route) => false,
+    );
   }
 
   @override
