@@ -57,6 +57,71 @@ The app currently runs using mock data sources by default, providing a ready-to-
 To switch to Firestore:
 Ensure you have set up a Firebase project and added the configuration files to the app
 
+## Firebase Schema
+
+### Database Structure
+![Firestore Root Structure](images/firestore_root_structure.png)
+
+### Collection Schemas
+
+#### users/{user_id}:
+```json
+{
+    "id": "string",
+    "email": "string",
+    "name": "string",
+    "profileImage": "string?",
+    "createdAt": "timestamp",
+    "updatedAt": "timestamp"
+}
+```
+
+#### appointments/{appointment_id}:
+```json
+{
+    "id": "string",
+    "userId": "string",
+    "specialistId": "string",
+    "appointmentDateTime": "timestamp",
+    "endDateTime": "timestamp",
+    "status": "string", // ["scheduled", "completed", "cancelled", "rescheduled"]
+    "createdAt": "timestamp",
+    "updatedAt": "timestamp",
+    "specialistName": "string",
+    "specialization": "string",
+    "specialistImageUrl": "string?"
+}
+```
+
+#### specialists/{specialist_id}:
+```json
+{
+    "id": "string",
+    "name": "string",
+    "specialization": "string",
+    "workingHours": [
+        {
+            "dayOfWeek": number,     // 1 = Monday, 2 = Tuesday, etc.
+            "from": "timestamp",      // Start time of the working day
+            "to": "timestamp",        // End time of the working day
+            "isWorkingDay": boolean   // If false, specialist doesn't work this day
+        },
+        // ... One entry for each day of the week
+    ],
+    "bio": "string?",                // Optional
+    "imageUrl": "string?",           // Optional
+    "rating": number,                // Default: 0.0
+    "appointmentDurationMinutes": number,  // Default: 30
+    "appointmentFee": number,        // Default: 0.0
+    "isAvailable": boolean          // Default: true
+}
+```
+
+### Document References and Queries
+- Appointments link to users via userId
+- Appointments link to specialists via specialistId
+
+![Appointments Query Example](images/appointments_query.png)
 
 ## App Architecture
 

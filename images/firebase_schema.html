@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Schema Diagrams</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .diagram {
+            margin-bottom: 50px;
+        }
+        .diagram h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .node {
+            background-color: #333333;
+            border: 1px solid #555555;
+            padding: 10px 20px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            min-width: 150px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .arrow {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        .vertical-arrow {
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram">
+        <h2>Firestore Root Structure</h2>
+        <div class="container">
+            <div class="row">
+                <div class="node">Firestore Root</div>
+            </div>
+            <div class="vertical-arrow">↓</div>
+            <div class="row">
+                <div class="node">users</div>
+                <div style="width: 100px;"></div>
+                <div class="node">appointments</div>
+                <div style="width: 100px;"></div>
+                <div class="node">specialists</div>
+            </div>
+            <div class="vertical-arrow">↓</div>
+            <div class="row">
+                <div class="node">user_document</div>
+                <div style="width: 100px;"></div>
+                <div class="node">appointment_document</div>
+                <div style="width: 100px;"></div>
+                <div class="node">specialist_document</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="diagram">
+        <h2>Appointments Query Example</h2>
+        <div class="container">
+            <div class="row">
+                <div class="node">Get User Appointments</div>
+                <div class="arrow">→</div>
+                <div class="node">Query appointments collection</div>
+            </div>
+            <div class="row">
+                <div style="width: 200px;"></div>
+                <div style="width: 100px;"></div>
+                <div class="node">Where userId equals current</div>
+            </div>
+            <div class="row">
+                <div style="width: 200px;"></div>
+                <div style="width: 100px;"></div>
+                <div class="node">Order by appointmentDateTime</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
