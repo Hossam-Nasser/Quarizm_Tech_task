@@ -4,7 +4,7 @@
 A brief introduction about myself: My name is Hossam, and I'm a mobile developer with two and a half years of experience. I've developed around eleven applications for both Android and iOS using Flutter. Currently, I'm working at a company called HNE Features.
 
 ## Project Overview
-A comprehensive Flutter application that allows users to browse specialists (doctors, consultants, trainers) and book appointments with them. Built with clean architecture, Cubit state management, and dependency injection using injectable.
+A comprehensive Flutter application that allows users to browse specialists (doctors, consultants, trainers) and book appointments with them. Built with clean architecture, Cubit state management, and dependency injection using injectable. The app currently runs using mock data, but Firestore has been implemented as an alternative data store.
 
 ## Features
 
@@ -46,6 +46,17 @@ flutter pub run build_runner build --delete-conflicting-outputs
 ```bash
 flutter run
 ```
+
+## Data Storage
+
+The app currently runs using mock data sources by default, providing a ready-to-use experience without any external dependencies. However, Firebase Firestore implementations have been created for all data services:
+
+- **Mock Data**: In-memory storage that simulates network requests and provides consistent test data
+- **Firestore**: Complete implementation of all services using Firebase Authentication and Firestore
+
+To switch to Firestore:
+Ensure you have set up a Firebase project and added the configuration files to the app
+
 
 ## App Architecture
 
@@ -105,18 +116,18 @@ Each feature follows the same structure:
 
 ```
 feature/
-├── data/
-│   ├── datasources/       # Data sources and implementations
-│   ├── models/            # Data models (extend domain entities)
-│   └── repositories/      # Repository implementations
-├── domain/
-│   ├── entities/          # Domain entities
-│   ├── repositories/      # Repository interfaces
-│   └── usecases/          # Use cases (business logic)
-└── presentation/
-│   ├── cubit/             # State management
-│   ├── pages/             # Screens
-│   └── widgets/           # UI components
+├── data/                # Data layer
+│   ├── models/           # Data models
+│   ├── repositories/     # Repository implementations
+│   └── services/         # Data sources
+├── domain/              # Domain layer
+│   ├── entities/         # Business objects
+│   ├── repositories/     # Repository interfaces
+│   └── usecases/         # Business logic
+└── presentation/        # Presentation layer
+    ├── cubit/             # State management
+    ├── pages/             # Screens
+    └── widgets/           # UI components
 ```
 
 ## Packages Used
