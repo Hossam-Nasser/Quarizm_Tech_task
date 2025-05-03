@@ -1,5 +1,9 @@
 # Specialist Reservation App - Quarizm Tech Task
 
+## Video Walkthrough
+
+A video walkthrough of the application is available at: https://drive.google.com/file/d/1AqH8jh9vqH-TMscFpr_kQa-Mt07gdAgV/view?usp=sharing
+
 ## About the Developer
 A brief introduction about myself: My name is Hossam, and I'm a mobile developer with two and a half years of experience. I've developed around eleven applications for both Android and iOS using Flutter. Currently, I'm working at a company called HNE Features.
 
@@ -255,10 +259,6 @@ The application uses the following packages:
 4. **Performance Optimization**: The app may experience performance issues with large datasets of specialists or appointments.
 5. **No Payment Integration**: The app doesn't include payment processing for appointments.
 6. **Limited Testing**: Some edge cases may not be fully covered in the current implementation.
-
-## Video Walkthrough
-
-A video walkthrough of the application is available at: https://drive.google.com/file/d/1AqH8jh9vqH-TMscFpr_kQa-Mt07gdAgV/view?usp=sharing
 
 ## Future Improvements
 
